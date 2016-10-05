@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Structure
+
+
+class StructureAdmin(admin.ModelAdmin):
+    list_display = ('region', 'country', 'value')
+
+admin.site.register(Structure, StructureAdmin)
