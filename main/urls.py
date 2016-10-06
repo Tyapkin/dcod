@@ -16,9 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from structures.views import index
-
 urlpatterns = [
-    url(r'^$', index, name='index'),
+    url(r'^$', 'structures.views.index', name='index'),
+    url(r'^download-json/$', 'structures.views.form_download', name='download'),
     url(r'^admin/', admin.site.urls),
 ]
