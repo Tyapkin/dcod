@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^$', 'structures.views.index', name='index'),
-    url(r'^download-json/$', 'structures.views.form_download', name='download'),
+    url(r'^download-json/$', 'structures.views.form_upload', name='upload'),
+    url(r'^success/$', 'structures.views.success', name='success'),
     url(r'^admin/', admin.site.urls),
 ]
