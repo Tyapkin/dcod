@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 
-{% block meta_title %}index.html{% endblock %}
+{% block meta_title %}Structures list{% endblock %}
 
 {% block content %}
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Hello! It`s index.html</h1>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table>
+                <thead>
+                <th>Region</th>
+                <th>Country</th>
+                <th>Value</th>
+                </thead>
+                <tbody>
+                {% for object in objects %}
+                <tr>
+                    <td>{{ object.region }}</td>
+                    <td>{{ object.country }}</td>
+                    <td>{{ object.value }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>Not found</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
