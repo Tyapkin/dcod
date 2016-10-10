@@ -1,4 +1,4 @@
-<!DOCTYPE html>{% load static %}
+<!DOCTYPE html>{% load static chartit %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -50,5 +50,6 @@
 <script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+{% block extra %}{% endblock %}
 </body>
 </html>

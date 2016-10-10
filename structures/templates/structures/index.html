@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load chartit %}
+
 {% block meta_title %}Structures list{% endblock %}
 
 {% block content %}
@@ -16,26 +18,13 @@
     </div>
     <div class="row">
         <div class="col-md-12" id="container">
-            <table>
-                <thead>
-                <th>Region</th>
-                <th>Country</th>
-                <th>Value</th>
-                </thead>
-                <tbody>
-                {% for object in objects %}
-                <tr>
-                    <td>{{ object.region }}</td>
-                    <td>{{ object.country }}</td>
-                    <td>{{ object.value }}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td>Not found</td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+
         </div>
     </div>
+{% endblock %}
+
+{% block extra %}
+
+{{ objects|load_charts:"container" }}
+
 {% endblock %}
