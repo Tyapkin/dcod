@@ -7,7 +7,8 @@ from .utils import handle_uploaded_file
 from .models import Structure
 
 def index(request):
-    qs = Structure.objects.all()
+    pk = request.COOKIES.get('current_region')
+    qs = Structure.objects.filter(region__id=int(pk))
     return render(request, 'structures/index.html', {'objects': qs})
 
 def form_upload(request):
