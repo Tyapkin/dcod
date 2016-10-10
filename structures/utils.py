@@ -53,7 +53,7 @@ def get_current_region(request):
 
     if id:
         try:
-            region = Region.objects.get(region=str(id))
+            region = Region.objects.get(pk=str(id))
         except Region.DoesNotExist:
             return None
         else:
